@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Resolution media query test</title>
+    <style>
+      li {
+        font-family: monospace, monospace;
+        line-height: 1.5;
+      }
+      li::after {
+        content: "none";
+        margin-left: 1ch;
+      }
+
+      @media (max-resolution: 95dpi) {
+        .unit-dpi::after {
+          content: "<= 95dpi";
+        }
+      }
+      @media (min-resolution: 96dpi) {
+        .unit-dpi::after {
+          content: ">= 96dpi";
+        }
+      }
+      @media (min-resolution: 192dpi) {
+        .unit-dpi::after {
+          content: ">= 192dpi";
+        }
+      }
+
+      @media (max-resolution: 36dpcm) {
+        .unit-dpcm::after {
+          content: "<= 36dpcm";
+        }
+      }
+      @media (min-resolution: 37dpcm) {
+        .unit-dpcm::after {
+          content: ">= 37dpcm";
+        }
+      }
+      @media (min-resolution: 75dpcm) {
+        .unit-dpcm::after {
+          content: ">= 75dpcm";
+        }
+      }
+
+      @media (max-resolution: 0.99dppx) {
+        .unit-dppx::after {
+          content: "< 1dppx";
+        }
+      }
+      @media (min-resolution: 1dppx) {
+        .unit-dppx::after {
+          content: ">= 1dppx";
+        }
+      }
+      @media (min-resolution: 2dppx) {
+        .unit-dppx::after {
+          content: ">= 2dppx";
+        }
+      }
+
+      @media (max-resolution: 0.99x) {
+        .unit-x::after {
+          content: "< 1x";
+        }
+      }
+      @media (min-resolution: 1x) {
+        .unit-x::after {
+          content: ">= 1x";
+        }
+      }
+      @media (min-resolution: 2x) {
+        .unit-x::after {
+          content: ">= 2x";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Resolution media query test</h1>
+    <p>
+      Tests with the <code>(max-resolution: …)</code> and
+      <code>(min-resolution: …)</code> media queries and different units. No
+      vendor prefixes used.
+    </p>
+    <ul>
+      <li class="unit-dpi">dpi:</li>
+      <li class="unit-dpcm">dpcm:</li>
+      <li class="unit-dppx">dppx:</li>
+      <li class="unit-x">x:</li>
+    </ul>
+  </body>
+</html>
